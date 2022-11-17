@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\OnionArchiture.Application\OnionArchiture.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\OnionArchiture\OnionArchiture.Persistence.csproj" />
+  </ItemGroup>
+
 
 </Project>
