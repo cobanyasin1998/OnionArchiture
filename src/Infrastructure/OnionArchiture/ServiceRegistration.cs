@@ -3,23 +3,17 @@ using Microsoft.Extensions.DependencyInjection;
 using OnionArchiture.Application.Interfaces.Repository;
 using OnionArchiture.Persistence.Context;
 using OnionArchiture.Persistence.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OnionArchiture.Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServices(this IServiceCollection serviceCollection)
+        public static void AddPersistenceRegistration(this IServiceCollection services)
         {
-            serviceCollection.AddDbContext<AppDbContext>(opt =>
-            {
-                opt.UseInMemoryDatabase("memoryDb");
-            });
+            services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("inMemoryDb"));
 
-            serviceCollection.AddTransient<IProductRepository, ProductRepository>();
-         
+            services.AddTransient<IProductRepository, ProductRepository>();
         }
+
     }
 }

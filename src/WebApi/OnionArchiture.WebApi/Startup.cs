@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OnionArchiture.Application;
 using OnionArchiture.Persistence;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,8 @@ namespace OnionArchiture.WebApi
         {
             services.AddControllers();
 
-            services.AddPersistenceServices();
+            services.AddApplicationRegistration();
+            services.AddPersistenceRegistration();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
